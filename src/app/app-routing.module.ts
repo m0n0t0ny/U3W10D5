@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { TodosComponent } from './components/todos/todos.component';
+import { CompletedComponent } from './components/completed/completed.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/todos', pathMatch: 'full' },
+  { path: 'todos', component: TodosComponent },
+  { path: 'completed', component: CompletedComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
